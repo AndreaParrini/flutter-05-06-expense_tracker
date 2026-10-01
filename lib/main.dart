@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter/services.dart';
 
 import 'package:expense_tracker/widgets/expenses.dart';
 
@@ -11,6 +12,10 @@ var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: Color.fromARGB(255, 5, 99, 125),
 );
 void main() {
+  // * in questo modo si blocca lla rotazione schermo e si forsa l'utente ad usare il telefono in verticale
+  /* WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((fn) { */
   runApp(
     MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
@@ -52,4 +57,5 @@ void main() {
       home: Expenses(),
     ),
   );
+  /* }); */
 }
